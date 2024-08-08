@@ -18,8 +18,12 @@ def read_numbers_from_csv(filename):
     return numbers
 
 def calculate_average(numbers):
+    try:
         average = sum(numbers) / len(numbers)
         return average
+    except ZeroDivisionError:
+        print("ZeroDivisionError: Cannot calculate average of an empty list.")
+        return None
 
 def main():
     filename = input("Enter the filename: ")
